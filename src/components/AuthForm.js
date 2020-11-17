@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
-import { Text, Input, Button } from "react-native-elements";
+import { StyleSheet } from "react-native";
+import { Text, Button, Input } from "react-native-elements";
 import Spacer from "./Spacer";
 
 const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
@@ -32,25 +32,21 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
         <Text style={styles.errorMessage}>{errorMessage}</Text>
       ) : null}
       <Spacer>
-        <Button title={submitButtonText} onPress={onSubmit} />
+        <Button
+          title={submitButtonText}
+          onPress={() => onSubmit({ email, password })}
+        />
       </Spacer>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    marginBottom: 0,
-  },
   errorMessage: {
     fontSize: 16,
     color: "red",
     marginLeft: 15,
-  },
-  link: {
-    color: "blue",
+    marginTop: 15,
   },
 });
 
