@@ -7,10 +7,11 @@ const Map = () => {
   const {
     state: { currentLocation },
   } = useContext(LocationContext);
+
   if (!currentLocation) {
     return <ActivityIndicator size="large" style={{ marginTop: 200 }} />;
   }
-  console.log(currentLocation);
+
   return (
     <MapView
       style={styles.map}
