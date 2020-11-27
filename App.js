@@ -17,11 +17,11 @@ import { Provider as LocationProvider } from "./src/context/LocationContext";
 import { Provider as TrackProvider } from "./src/context/TrackContext";
 
 const switchNavigator = createSwitchNavigator({
-  // ResolveAuth: ResolveAuthScreen,
-  // loginFlow: createStackNavigator({
-  //   Signup: SignupScreen,
-  //   Signin: SigninScreen,
-  // }),
+  ResolveAuth: ResolveAuthScreen,
+  loginFlow: createStackNavigator({
+    Signup: SignupScreen,
+    Signin: SigninScreen,
+  }),
   mainFlow: createBottomTabNavigator({
     TrackListFlow: createStackNavigator({
       TrackList: TrackListScreen,
